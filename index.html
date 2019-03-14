@@ -1,0 +1,63 @@
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css"></link>
+  <link rel="stylesheet" href="styles.css"></link>
+</head>
+<body>
+<div id="container">
+<input id="emailAddress"></input>
+<input id="password" type="password"></input>
+<button id="signUpUser">Join</button>
+<button id="signInUser">Sign In</button>
+<button id="signOut">Sign Out</button>
+<div id ="itemList">
+  <h3>Enter a store name to add it to your list</h3>
+<input id="storeName"></input>
+<button id="submitButton">Submit</button>
+<button id="startDispalyStores">Display Stores</button>
+</div>
+
+<ul id = "storesUL"></ul>
+
+<div id="itemBox">
+<h3 id="itemsTitle"></h3>
+<ul id="itemsUL"></ul>
+</div>
+
+  <div class="form-popup" id="itemForm" >
+    <!--<form id="myForm" class="form-container"> -->
+      <h1>Add Items</h1>
+
+      <label><b>Item</b></label>
+      <input type="text" id="item" required>
+
+      <label><b>Quantity</b></label>
+      <input type="number" id="qty" required>
+
+      <button type="button" class="btn" onclick="logItems()">Submit</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  <!--  </form> -->
+  </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script> -->
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBY6xW9qPBbZl8ksTiMzVEpedPLwVwrsDI",
+    authDomain: "todo-list-a98a7.firebaseapp.com",
+    databaseURL: "https://todo-list-a98a7.firebaseio.com",
+    projectId: "todo-list-a98a7",
+    storageBucket: "todo-list-a98a7.appspot.com",
+    messagingSenderId: "326012911451"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="main.js"></script>
+<script src="stores.js"></script>
+</body>
+</html>
